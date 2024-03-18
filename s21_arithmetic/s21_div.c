@@ -9,7 +9,7 @@ int s21_div(s21_decimal value_1, s21_decimal value_2, s21_decimal *result) {
     s21_decimal_to_s21_big_decimal(value_2, &arr2);
     s21_decimal_to_s21_big_decimal(max_num, &arr_max);
     s21_mul_big(arr2, arr_max, &arr_res);
-    if (s21_bit_compare(arr_res.bits, arr1.bits, 12) == -1) {
+    if (s21_bit_compare(arr_res.bits, arr1.bits, 12) == -1) { //if firs less
       ret = 1 + (s21_get_sign(value_1) != s21_get_sign(value_2));
     } else {
       s21_div_big(arr1, arr2, &arr_res);

@@ -7,6 +7,7 @@
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #define S21_NAN (0.0 / 0.0)
 #define S21_INFINITY (1.0 / 0.0)
@@ -17,16 +18,12 @@
 #define MAX_DECIMAL 79228162514264337593543950335.L
 
 typedef struct {
-  unsigned int bits[4];
+ int bits[4];
 } s21_decimal;
 
 typedef struct {
   unsigned int bits[12];  // мантисса
-  int exponenta;          // экспонента
-  int negative;           // отрицательное ли число
-  int zero_left;          // количество нулей слева
-  int one_position_left;  // старший бит
-  int one_right;          // первая единица справа
+     // первая единица справа
 } s21_big_decimal;
 
 typedef enum s21_decimal_sign {
