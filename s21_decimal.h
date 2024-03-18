@@ -86,8 +86,8 @@ int sum_mantissa(s21_big_decimal* big_value_1, s21_big_decimal* big_value_2,
                  s21_big_decimal* result);
 void sub_mantis_big(s21_big_decimal value_1, s21_big_decimal value_2,
                     s21_big_decimal* result);
-void set_bit_big(s21_big_decimal* num, int bit, int result);
-int get_bit_big(s21_big_decimal* num, int index);
+void s21_set_bit_big(s21_big_decimal* num, int bit, int result);
+int s21_get_bit_big(s21_big_decimal* num, int index);
 void print_big_decimal(s21_big_decimal* num);
 int shift_left_big(s21_big_decimal* big_value, int index);
 void init_big(s21_decimal value, s21_big_decimal* dec);
@@ -107,7 +107,7 @@ void s21_clear_decimal(s21_decimal* num);
 int s21_is_zero(s21_decimal num);                          
 void s21_set_sign(s21_decimal* num, int sign);             
 int s21_get_sign(s21_decimal num);                        
-int s21_get_bit(s21_decimal num, int index);               
+int s21_s21_get_bit(s21_decimal num, int index);               
 void s21_set_bit(s21_decimal* num, int index, int value);  
 int s21_get_scale(s21_decimal num);                        
 int s21_set_scale(s21_decimal* num, int scale);            
@@ -144,5 +144,19 @@ int s21_round(s21_decimal value, s21_decimal* result);
 int s21_truncate(s21_decimal value, s21_decimal* result);
 int s21_negate(s21_decimal value, s21_decimal* result);
 int bits_zero_check(const unsigned *arr, int count);
-
+void s21_div_big(s21_big_decimal value_1, s21_big_decimal value_2,
+               s21_big_decimal *result) ;
+               void s21_mul_big(s21_big_decimal value_1, s21_big_decimal value_2,
+               s21_big_decimal *result) ;
+void s21_set_bit(s21_decimal* num, int index, int value);
+int s21_get_bit(s21_decimal num, int index);
+void s21_div10(unsigned *arr, int count);
+void s21_zero_array(unsigned *array, int count);
+void s21_middle_big(s21_big_decimal value_1, s21_big_decimal value_2,
+                  s21_big_decimal *result);
+                  void s21_copy_array(const unsigned *array1, unsigned *array2, int count) ;
+                  void s21_zero_array(unsigned *array, int count) ;
+                  void nullify(s21_decimal *d) ;
+                  void printb(s21_decimal bits_array);
+bool get_bit_value(s21_decimal target, int bit_number);
 #endif

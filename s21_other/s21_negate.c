@@ -5,7 +5,7 @@ int s21_negate(s21_decimal value, s21_decimal *result) {
      if (result == NULL) {
     result_num = S21_OTHER_ERROR;
   } else {
-    s21_clear_decimal(result);
+    nullify(result);
     int sign=0;
     sign = s21_get_sign(value);
     *result = value;

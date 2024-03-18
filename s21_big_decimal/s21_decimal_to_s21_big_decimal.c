@@ -34,16 +34,3 @@ void s21_decimal_to_s21_big_decimal(s21_decimal value, s21_big_decimal* big_valu
     for (int i = 0; i < degree; ++i) s21_big_decimal_mul_10(big_value->bits, 12);
 }
 
-int main() {
-    s21_decimal value = {-123, -456, -789};  // пример значения s21_decimal
-    s21_big_decimal big_value;  // для хранения результата
-    
-    s21_decimal_to_s21_big_decimal(value, &big_value);
-    
-    printf("Converted value: ");
-    for (int i = 0; i < 12; ++i) {
-        printf("%u ", big_value.bits[i]);
-    }
-    
-    return 0;
-}

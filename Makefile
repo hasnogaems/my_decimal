@@ -5,3 +5,4 @@ HEADER = s21_decimal.h
 
 all:
 	gcc *.c */*.c
+	./a.out
